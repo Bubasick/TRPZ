@@ -1,0 +1,5 @@
+Piano 300 250
+sofa 100 200
+table 50 15
+ball 10 2
+grill 25 25

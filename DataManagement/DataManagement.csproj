@@ -4,4 +4,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="cars.txt" />
+    <None Remove="drivers.txt" />
+    <None Remove="managers.txt" />
+    <None Remove="motorbikes.txt" />
+    <None Remove="products.txt" />
+    <None Remove="Store.json.txt" />
+    <None Remove="store.txt" />
+    <None Remove="store1.txt" />
+    <None Remove="stores.txt" />
+    <None Remove="trucks.txt" />
+  </ItemGroup>
+
 </Project>
