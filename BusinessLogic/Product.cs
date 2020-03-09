@@ -15,5 +15,9 @@ namespace BusinessLogic
         {
             return ($"{name} costs {price}  weighs {size} kg \n");
         }
+        public override string ToString()
+        {
+            return ($"{name} {price}$  \n"); 
+        }
     }
 }

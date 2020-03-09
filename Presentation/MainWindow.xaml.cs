@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using DataManagement;
 namespace Presentation
 {
     /// <summary>
@@ -22,24 +23,13 @@ namespace Presentation
     {
         public MainWindow()
         {
-            InitializeComponent();
-            List<User> items = new List<User>();
-            Console.WriteLine("SOSI");
-            items.Add(new User() { Name = "John Doe", Age = 42 });
-            items.Add(new User() { Name = "Jane Doe", Age = 39 });
-            items.Add(new User() { Name = "Sammy Doe", Age = 13 });
-            lvDataBinding.ItemsSource = items;
-            
-        }
-        public class User
-        {
-            public string Name { get; set; }
+           var products = Provider.SendProducts();
+           var stores = Provider.SendStores();
+           InitializeComponent();
+           ProductDataBinding.ItemsSource = products;
+           StoreDataBinding.ItemsSource = stores;
 
-            public int Age { get; set; }
-            public override string ToString()
-            {
-                return this.Name + ", " + this.Age + " years old";
-            }
         }
+     
     }
 }

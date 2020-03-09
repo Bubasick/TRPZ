@@ -3,14 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{D7D52FC0-8C11-4997-8224-A4938D0619D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Presentation\Presentation.csproj", "{D7D52FC0-8C11-4997-8224-A4938D0619D4}"
 	ProjectSection(ProjectDependencies) = postProject
+		{89070698-285A-46EF-AA69-9088CB2CE1D1} = {89070698-285A-46EF-AA69-9088CB2CE1D1}
 		{764648DC-0CFC-4489-A681-535A766DF88C} = {764648DC-0CFC-4489-A681-535A766DF88C}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{764648DC-0CFC-4489-A681-535A766DF88C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{764648DC-0CFC-4489-A681-535A766DF88C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "DataManagement\DataManagement.csproj", "{89070698-285A-46EF-AA69-9088CB2CE1D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataManagement", "DataManagement\DataManagement.csproj", "{89070698-285A-46EF-AA69-9088CB2CE1D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,10 +12,12 @@
 
             <!---Select Storage-->
             <TextBlock Text="Select Storage" FontWeight="bold"/>
-            <ComboBox SelectedIndex="0"  Padding="2">
-            </ComboBox>
             <Grid>
-                <ListView Margin="10" Name="lvDataBinding" ></ListView>
+                <ListView Margin="10" Name="StoreDataBinding"></ListView>
+            </Grid>
+            <TextBlock Text="Select Product" FontWeight="bold"/>
+            <Grid>
+                <ListView Margin="10" Name="ProductDataBinding" ></ListView>
             </Grid>
 
 

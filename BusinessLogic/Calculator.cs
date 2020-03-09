@@ -5,6 +5,7 @@ namespace BusinessLogic
     public static class Calculator
     {
         static MainStore mainStore = new MainStore();
+
         static public void SetStore(ref MainStore data)
         {
             mainStore = data;
