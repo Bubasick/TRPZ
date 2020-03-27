@@ -4,7 +4,7 @@ using System.IO;
 
 namespace DataManagement
 {
-    public static class TransferData
+    public  class TransferData
     {
         public static object Transfer(Type type)
         {
@@ -12,5 +12,6 @@ namespace DataManagement
             return new Serializator(new XMLSerializator(type)).Deserialize(connectionString);
     }
 
+      
     }
 }

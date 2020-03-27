@@ -4,13 +4,16 @@ using DataManagement;
 
 namespace BusinessLogic
 {
-    static public class Provider
+    public  class Provider 
     {
-        private static MainStore mainStore =
-            (MainStore) new Serializator(new XMLSerializator(typeof(MainStore))).Deserialize(
-                @"D:\Навчання\TRPZ\Project\DataManagement\MainStore.txt");
-
-       static public List<String> SendStores()
+        private MainStore mainStore;
+        private IGetData _getData;
+        public Provider(IGetData getData)
+        {
+            _getData = getData;
+            mainStore = _getData.GetObject(typeof(MainStore));
+        }
+        public List<String> SendStores()
         {
             List<string> storeStringList = new List<string>();
             foreach (var store in mainStore.stores)
@@ -20,7 +23,7 @@ namespace BusinessLogic
 
             return storeStringList;
         }
-       static public List<String> SendProducts()
+         public List<String> SendProducts()
         {
             List<string> productStringList = new List<string>();
             foreach (var product in mainStore.products)
@@ -31,5 +34,6 @@ namespace BusinessLogic
             return productStringList;
         }
 
+       
     }
 }
