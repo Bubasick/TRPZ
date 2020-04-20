@@ -29,9 +29,9 @@ namespace BusinessLogic
             {
                 string[] parts = lines[i].Split(' ');
                 products.Add(new Product());
-                products[i].name = parts[0];
-                products[i].price = Convert.ToInt32(parts[1]);
-                products[i].size = Convert.ToInt32(parts[2]);
+                products[i].Name = parts[0];
+                products[i].Price = Convert.ToInt32(parts[1]);
+                products[i].Size = Convert.ToInt32(parts[2]);
 
             }
 

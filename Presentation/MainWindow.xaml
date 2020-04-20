@@ -13,11 +13,13 @@
             <!---Select Storage-->
             <TextBlock Text="Select Storage" FontWeight="bold"/>
             <Grid>
-                <ListView Margin="10" Name="StoreDataBinding"></ListView>
+                <ListView Margin="10" ItemsSource="{Binding Stores}"
+                          SelectedItem="{Binding SelectedStore}"></ListView>
             </Grid>
             <TextBlock Text="Select Product" FontWeight="bold"/>
             <Grid>
-                <ListView Margin="10" Name="ProductDataBinding" ></ListView>
+                <ListView Margin="10" ItemsSource="{Binding Products}"
+                          SelectedItem="{Binding SelectedProduct}"></ListView>
             </Grid>
 
 

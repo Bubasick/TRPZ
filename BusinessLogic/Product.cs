@@ -7,33 +7,38 @@ namespace BusinessLogic
     [DataContract]
     public class Product : INotifyPropertyChanged
     {
-        [DataMember]
+        [DataMember] 
+        private double price;
         public double Price
         {
-            get { return Price; }
+            get { return price; }
             set
             {
-                Price = value;
+                price = value;
                 OnPropertyChanged("Price");
             }
         }
-        [DataMember]
+
+        [DataMember] 
+        private int size;
         public int Size
         {
-            get { return Size; }
+            get { return size; }
             set
             {
-                Size = value;
+                size = value;
                 OnPropertyChanged("Size");
             }
         }
-        [DataMember]
+
+        [DataMember] 
+        private string name;
         public string Name
         {
-            get { return Name; }
+            get { return name; }
             set
             {
-                Name = value;
+                name = value;
                 OnPropertyChanged("Name");
             }
         }

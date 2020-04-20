@@ -17,17 +17,17 @@ namespace BusinessLogic
         }
         static public Transport chooseTransportType(Product product)
         {
-            if (product.size < 20)
+            if (product.Size < 20)
             {
                 mainStore.motorbikes.Sort((x, y) => x.timeBeforeAvailability.CompareTo(y.timeBeforeAvailability));
                 return mainStore.motorbikes[0];
             }
-            if (20 <= product.size && product.size < 200)
+            if (20 <= product.Size && product.Size < 200)
             {
                 mainStore.cars.Sort((x, y) => x.timeBeforeAvailability.CompareTo(y.timeBeforeAvailability));
                 return mainStore.cars[0];
             }
-            if (200 <= product.size && product.size < 1500)
+            if (200 <= product.Size && product.Size < 1500)
             {
                 mainStore.trucks.Sort((x, y) => x.timeBeforeAvailability.CompareTo(y.timeBeforeAvailability));
                 return mainStore.trucks[0];
@@ -60,8 +60,8 @@ namespace BusinessLogic
         static public double timeToDeliver(string name, int id)
         {
             double time = 0;
-            double distance = mainStore.stores[id].distance;
-            Product product = mainStore.products.Find(i => i.name == name); //search for a Product object by its name
+            double distance = mainStore.stores[id].Distance;
+            Product product = mainStore.products.Find(i => i.Name == name); //search for a Product object by its name
             Manager manager = chooseManager();
             Driver driver = chooseDriver(chooseTransportType(product));
             // System.Console.WriteLine(manager.timeNeededToPerformTask(product));

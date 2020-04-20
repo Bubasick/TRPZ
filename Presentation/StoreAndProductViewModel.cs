@@ -8,7 +8,7 @@ using BusinessLogic;
 
 namespace Presentation
 {
-    class StoreViewModel :INotifyPropertyChanged
+    class StoreAndProductViewModel : INotifyPropertyChanged
     {
         private Store selectedStore;
         private Product selectedProduct;
@@ -29,14 +29,14 @@ namespace Presentation
             get { return selectedProduct; }
             set
             {
-                selectedProduct= value;
+                selectedProduct = value;
                 OnPropertyChanged("SelectedProduct");
             }
         }
 
-        public StoreViewModel()
+        public StoreAndProductViewModel()
         {
-            Provider provider = new Provider(new GetData()); 
+            Provider provider = new Provider(new GetData());
             Products = new ObservableCollection<Product>(provider.SendProducts());
             Stores = new ObservableCollection<Store>(provider.SendStores());
         }

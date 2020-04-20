@@ -7,24 +7,26 @@ namespace BusinessLogic
     [DataContract]
     public class Store : INotifyPropertyChanged
     {
-        [DataMember]
+        [DataMember] 
+        private double distance;
         public double Distance
         {
-            get { return Distance; }
+            get { return distance; }
             set
             {
-                Distance = value;
+                distance = value;
                 OnPropertyChanged("Distance");
             }
         }
 
-        [DataMember]
+        [DataMember] 
+        private string cityName;
         public string CityName
         {
-            get { return CityName; }
+            get { return cityName; }
             set
             {
-                CityName = value;
+                cityName = value;
                 OnPropertyChanged("CityName");
             }
         }
