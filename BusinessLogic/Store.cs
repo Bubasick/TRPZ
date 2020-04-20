@@ -1,27 +1,52 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace BusinessLogic
 {
     [DataContract]
-    public class Store
+    public class Store : INotifyPropertyChanged
     {
         [DataMember]
-        public double distance;
+        public double Distance
+        {
+            get { return Distance; }
+            set
+            {
+                Distance = value;
+                OnPropertyChanged("Distance");
+            }
+        }
+
         [DataMember]
-        public string cityName;
+        public string CityName
+        {
+            get { return CityName; }
+            set
+            {
+                CityName = value;
+                OnPropertyChanged("CityName");
+            }
+        }
 
         public Store(double distance,string cityName)
         {
-            this.distance = distance;
-            this.cityName = cityName;
+            this.Distance = distance;
+            this.CityName = cityName;
         }
         public Store(double distance)
         {
-            this.distance = distance;
+            this.Distance = distance;
         }
         public override string ToString()
         {
-            return this.distance + " km";
+            return  this.Distance + " km";
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName]string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
     }
 }

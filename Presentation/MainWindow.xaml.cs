@@ -30,6 +30,7 @@ namespace Presentation
            ProductDataBinding.ItemsSource = products;
            StoreDataBinding.ItemsSource = stores;
         }
-     
+
+        
     }
 }

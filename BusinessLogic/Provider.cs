@@ -13,25 +13,13 @@ namespace BusinessLogic
             _getData = getData;
             mainStore = _getData.GetObject(typeof(MainStore));
         }
-        public List<String> SendStores()
+        public List<Store> SendStores()
         {
-            List<string> storeStringList = new List<string>();
-            foreach (var store in mainStore.stores)
-            {
-               storeStringList.Add(store.ToString()); 
-            }
-
-            return storeStringList;
+            return mainStore.stores;
         }
-         public List<String> SendProducts()
+         public List<Product> SendProducts()
         {
-            List<string> productStringList = new List<string>();
-            foreach (var product in mainStore.products)
-            {
-                productStringList.Add(product.ToString());
-            }
-
-            return productStringList;
+            return mainStore.products;
         }
 
        

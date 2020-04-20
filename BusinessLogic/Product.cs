@@ -1,23 +1,56 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace BusinessLogic
 {
     [DataContract]
-    public class Product
+    public class Product : INotifyPropertyChanged
     {
         [DataMember]
-        public double price;
+        public double Price
+        {
+            get { return Price; }
+            set
+            {
+                Price = value;
+                OnPropertyChanged("Price");
+            }
+        }
         [DataMember]
-        public int size;
+        public int Size
+        {
+            get { return Size; }
+            set
+            {
+                Size = value;
+                OnPropertyChanged("Size");
+            }
+        }
         [DataMember]
-        public string name;
+        public string Name
+        {
+            get { return Name; }
+            set
+            {
+                Name = value;
+                OnPropertyChanged("Name");
+            }
+        }
         public string displayProduct()
         {
-            return ($"{name} costs {price}  weighs {size} kg \n");
+            return ($"{Name} costs {Price}  weighs {Size} kg \n");
         }
         public override string ToString()
         {
-            return ($"{name} {price}$  \n"); 
+            return ($"{Name} {Price}$  \n"); 
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName]string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
     }
+
 }
