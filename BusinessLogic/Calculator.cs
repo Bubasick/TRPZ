@@ -73,5 +73,20 @@ namespace BusinessLogic
             return Math.Round(time, 2);
 
         }
+        static public double timeToDeliver(Product product, Store store)
+        {
+            double time = 0;
+            double distance = store.Distance;
+            Manager manager = chooseManager();
+            Driver driver = chooseDriver(chooseTransportType(product));
+            // System.Console.WriteLine(manager.timeNeededToPerformTask(product));
+
+            time = manager.timeNeededToPerformTask(product) + driver.currentTransport.timeToDeliver(distance) + Math.Max(driver.timeBeforeAvailability, driver.currentTransport.timeBeforeAvailability);
+            driver.timeBeforeAvailability += 2 * driver.currentTransport.timeToDeliver(distance);
+            manager.timeBeforeAvailability += manager.timeNeededToPerformTask(product);
+
+            return Math.Round(time, 2);
+
+        }
     }
 }

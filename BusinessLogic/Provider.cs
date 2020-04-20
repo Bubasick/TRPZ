@@ -22,6 +22,12 @@ namespace BusinessLogic
             return mainStore.products;
         }
 
+         public string CalculateDeliveryTime(Product product, Store store)
+         {
+             Calculator.SetStore(ref mainStore);
+             TimeSpan time = TimeSpan.FromHours(Calculator.timeToDeliver(product, store));
+             return time.Days + " days " + time.Hours + " hours " + time.Minutes + " minutes "; 
+         }
        
     }
 }
