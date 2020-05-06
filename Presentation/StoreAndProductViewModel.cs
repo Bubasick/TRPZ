@@ -24,7 +24,7 @@ namespace Presentation
                 return addCommand ??
                        (addCommand = new RelayCommand(obj =>
                        {
-                           MessageBox.Show("Your order will be delivered in " + provider.CalculateDeliveryTime(SelectedProduct,SelectedStore));
+                           MessageBox.Show("Your order will be delivered in " + provider.SendDeliveryTime(SelectedProduct,SelectedStore));
                        }));
             }
         }
