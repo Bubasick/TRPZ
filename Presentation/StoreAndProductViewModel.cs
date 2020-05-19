@@ -11,7 +11,6 @@ namespace Presentation
 {
     class StoreAndProductViewModel : INotifyPropertyChanged
     {
-        Provider provider = new Provider(new GetData());
         private Store selectedStore;
         private Product selectedProduct;
 
@@ -24,7 +23,7 @@ namespace Presentation
                 return addCommand ??
                        (addCommand = new RelayCommand(obj =>
                        {
-                           MessageBox.Show("Your order will be delivered in " + provider.SendDeliveryTime(SelectedProduct,SelectedStore));
+                           MessageBox.Show("Your order will be delivered in ");
                        }));
             }
         }
@@ -54,8 +53,6 @@ namespace Presentation
 
         public StoreAndProductViewModel()
         {
-            Products = new ObservableCollection<Product>(provider.SendProducts());
-            Stores = new ObservableCollection<Store>(provider.SendStores());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -1,4 +1,4 @@
-﻿using BusinessLogic;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +25,7 @@ namespace Presentation
         { 
          
            InitializeComponent();
-           DataContext = new StoreAndProductViewModel();
+          // DataContext = new StoreAndProductViewModel();
 
         }
 
