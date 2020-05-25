@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AutoMapper;
+using BusinessLogic.Services;
 using DataManagement;
 namespace Presentation
 {
@@ -25,8 +27,6 @@ namespace Presentation
         { 
          
            InitializeComponent();
-          // DataContext = new StoreAndProductViewModel();
-
         }
 
         

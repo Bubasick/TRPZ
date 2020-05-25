@@ -12,9 +12,9 @@ namespace DataManagement
         public DbSet<Manager> Managers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Store> Stores { get; set; }
-        public DeliveryServiceDbContext()
+        public DeliveryServiceDbContext() : base()
         {
-
+           
         }
         public DeliveryServiceDbContext(DbContextOptions<DeliveryServiceDbContext> options) : base(options)
         {
@@ -25,9 +25,13 @@ namespace DataManagement
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer("Server=localhost; Database=Delivery; Trusted_Connection=True;");
+            //optionsBuilder.UseSqlServer("Data Source=DESKTOP-5M6Q2B4;Initial Catalog=DeliveryDB;Integrated Security=True");
+            optionsBuilder.UseMySql(
+                "Server = localhost; Database = DeliveryDB; Uid = root; Pwd = 11111111;");
         }
+      
     }
-
 }
+
+
 

@@ -1,9 +1,10 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataManagement.Migrations
 {
-    public partial class InitalMigration : Migration
+    public partial class initialcreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,8 +13,9 @@ namespace DataManagement.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TimeBeforeAvailability = table.Column<TimeSpan>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    DateOfAvailability = table.Column<DateTime>(nullable: false),
+                    SpeedOfCarInKm = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -25,8 +27,9 @@ namespace DataManagement.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TimeBeforeAvailability = table.Column<TimeSpan>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    DateOfAvailability = table.Column<DateTime>(nullable: false),
+                    TypingSpeed = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -38,7 +41,7 @@ namespace DataManagement.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     Price = table.Column<decimal>(nullable: false)
                 },
@@ -52,7 +55,7 @@ namespace DataManagement.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     DistanceInKm = table.Column<double>(nullable: false),
                     CityName = table.Column<string>(nullable: true)
                 },

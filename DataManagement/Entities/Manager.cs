@@ -8,6 +8,7 @@ namespace DataManagement.Entities
     public class Manager
     {
         public int Id { get; set; }
-        public TimeSpan TimeBeforeAvailability { get; set; }
+        public DateTime DateOfAvailability { get; set; }
+        public int TypingSpeed { get; set; }
     }
 }

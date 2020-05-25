@@ -9,13 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="RelayCommand.cs" />
-    <Compile Remove="StoreAndProductViewModel.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj" />
     <ProjectReference Include="..\DataManagement\DataManagement.csproj" />
   </ItemGroup>
 
 </Project>
+

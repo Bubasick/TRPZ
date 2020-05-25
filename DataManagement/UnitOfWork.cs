@@ -20,6 +20,7 @@ namespace DataManagement
         public IRepository<Manager> ManagerRepository { get; }
         public IRepository<Product> ProductRepository { get; }
         public IRepository<Store> StoreRepository { get; }
+        
         public async Task Save()
         {
             await _context.SaveChangesAsync();
